@@ -36,7 +36,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0",
     "json2yaml": "^1.1.0",
-    "onchange": "^4.0.0",
+    "onchange": "^7.1.0",
     "re-template-tag": "^2.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^3.12.0",
