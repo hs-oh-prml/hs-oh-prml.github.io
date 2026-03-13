@@ -4,8 +4,8 @@
 
 - label: "Google Scholar"
   value: "Scholar Profile"
-  href: "#"
+  href: "https://scholar.google.com/citations?hl=ko&user=pgJeqLIAAAAJ"
 
 - label: "Research Group"
   value: "PRML (Supervisor: Seong-Whan Lee)"
-  href: "https://pr.korea.ac.kr/"
+  href: "http://pr.korea.ac.kr/"

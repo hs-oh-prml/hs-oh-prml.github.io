@@ -2,44 +2,195 @@
   items:
     - title: "Toward Complex-Valued Neural Networks for Waveform Generation"
       authors: "H.-S. Oh, D.-H. Cho, S.-B. Kim, S.-W. Lee"
-      venue: "ICLR 2026"
+      venue: "ICLR"
       tags:
         - "Waveform Generation"
-        - "Complex-Valued NN"
+        - "Complex-Valued Neural Networks"
       links:
         - label: "Paper"
-          href: "#"
+          href: "https://openreview.net/forum?id=U4GXPqm3Va"
+        - label: "Demo"
+          href: "https://hs-oh-prml.github.io/ComVo/"
         - label: "Code"
-          href: "#"
-        - label: "BibTeX"
-          href: "#"
+          href: "https://github.com/hs-oh-prml/ComVo"
 
 - year: 2025
   items:
     - title: "FillerSpeech: Towards Human-Like Text-to-Speech Synthesis with Filler Injection and Filler Style Control"
       authors: "S.-B. Kim, J.-H. Cha, H.-S. Oh, H.-J. Choi, S.-W. Lee"
-      venue: "EMNLP 2025"
-      tags: []
+      venue: "EMNLP"
+      tags:
+        - Text-to-speech
+        - Filler
+        - Style Control
       links:
         - label: "Paper"
-          href: "#"
-        - label: "Code"
-          href: "#"
+          href: "https://aclanthology.org/2025.emnlp-main.1730/"
+        - label: "Demo"
+          href: "https://fillerspeech.github.io/main/"
 
     - title: "EmoSphere-SER: Enhancing Speech Emotion Recognition through Spherical Representation with Auxiliary Classification"
       authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-W. Lee"
-      venue: "INTERSPEECH 2025"
-      tags: []
+      venue: "INTERSPEECH"
+      tags:
+        - Speech emotion recognition
+        - Dimensional emotion
+        - Affective computing
       links:
         - label: "Paper"
-          href: "#"
+          href: "https://www.isca-archive.org/interspeech_2025/cho25_interspeech.html"
+        - label: "Code"
+          href: "https://github.com/Choddeok/EmoSphere-SER"
 
+    - title: "VibE-Singer: Vibrato Extraction with High Frequency Pitch for Singing Voice Conversion"
+      authors: "J.-S. Choi, D.-M. Byun, H.-S. Oh, S.-W. Lee"
+      venue: "INTERSPEECH"
+      tags: 
+        - Singing voice conversion
+        - Singing style transfer
+        - Vibrato control
+        - Discrete wavelet transform
+      links:
+        - label: "Paper"
+          href: "https://www.isca-archive.org/interspeech_2025/choi25e_interspeech.html"
+        - label: "Demo"
+          href: "https://castlechoi.github.io/VibE-SVC-demo"
+
+    - title: "DiEmo-TTS: Disentangled Emotion Representations via Self-Supervised Distillation for Cross-Speaker Emotion Transfer in Text-to-Speech"
+      authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-W. Lee"
+      venue: "INTERSPEECH"
+      tags: 
+        - Text-to-speech,
+        - Cross-speaker emotion transfer
+      links:
+        - label: "Paper"
+          href: "https://www.isca-archive.org/interspeech_2025/cho25b_interspeech.html"
+        - label: "Demo"
+          href: "https://choddeok.github.io/DiEmo-TTS-Demo/"
+        - label: "Code"
+          href: "https://github.com/Choddeok/DiEmo-TTS"
+
+    - title: "EmoSphere++: Emotion-Controllable Zero-Shot Text-to-Speech via Emotion-Adaptive Spherical Vector"
+      authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-W. Lee"
+      venue: "IEEE Transactions on Affective Computing"
+      tags: 
+        - Emotional speech synthesis
+        - Emotion transfer
+        - Emotion style and intensity control
+        - Zero-shot text-to-speech
+      links:
+        - label: "Paper"
+          href: "https://ieeexplore.ieee.org/abstract/document/10965917/"
+        - label: "Demo"
+          href: "https://choddeok.github.io/EmoSphere-Demo/"
+        - label: "Code"
+          href: "https://github.com/Choddeok/EmoSpherepp/"
+
+    - title: "UnitCorrect: Unit-based Mispronunciation Correcting System with a DTW-based Detection"
+      authors: "H.-W. Bae, H.-S. Oh, S.-B. Kim, S.-W. Lee"
+      venue: "IEEE/ACM Transactions on Audio, Speech, and Language Processing"
+      tags: 
+        - Conditional flow matching, dynamic time
+        - Dynamic warping
+        - Mispronunciation detection
+        - Pronunciation correction
+        - Speech editing
+      links:
+        - label: "Paper"
+          href: "https://ieeexplore.ieee.org/document/10959715"
+        - label: "Demo"
+          href: "https://prml-lab-speech-team.github.io/demo/UnitCorrect/"
+
+    - title: "DurFlex-EVC: Duration-Flexible Emotional Voice Conversion Leveraging Discrete Representations Without Text Alignment"
+      authors: "H.-S. Oh, S.-H. Lee, D.-H. Cho, S.-W. Lee"
+      venue: "IEEE Transactions on Affective Computing"
+      tags: 
+        - Duration control
+        - Emotional voice conversion
+        - Self-supervised representation
+        - Style disentanglement
+      links:
+        - label: "Paper"
+          href: "https://ieeexplore.ieee.org/abstract/document/10844546"
+        - label: "Demo"
+          href: "https://prml-lab-speech-team.github.io/durflex/"
+        - label: "Code"
+          href: "https://github.com/hs-oh-prml/DurFlexEVC/"
+
+    - title: "JELLY: Joint Emotion Recognition and Context Reasoning with LLMs for Conversational Speech Synthesis"
+      authors: "J.-H. Cha, S.-B. Kim, H.-S. Oh, S.-W. Lee"
+      venue: "ICASSP"
+      tags: 
+        - Conversational speech synthesis
+        - Dialogue, emotional context reasoning
+        - Large language model
+        - Low-rank adaptation
+      links:
+        - label: "Paper"
+          href: "https://ieeexplore.ieee.org/abstract/document/10888227"
+        - label: "Demo"
+          href: "https://jh-cha-prml.github.io/JELLY"
+          
 - year: 2024
   items:
     - title: "EmoSphere-TTS: Emotional Style and Intensity Modeling via Spherical Emotion Vector for Controllable Emotional Text-to-Speech"
       authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-H. Lee, S.-W. Lee"
-      venue: "INTERSPEECH 2024"
-      tags: []
+      venue: "INTERSPEECH"
+      tags: 
+        - Text-to-speech
+        - Expressive emotional speech synthesis
+        - Emotional style and intensity control
       links:
         - label: "Paper"
-          href: "#"
+          href: "https://www.isca-archive.org/interspeech_2024/cho24_interspeech.html"
+        - label: "Demo"
+          href: "https://EmoSphere-TTS.github.io/"
+        - label: "Code"
+          href: "https://github.com/Choddeok/EmoSphere-TTS"
+
+    - title: "Diffprosody: Diffusion-based latent prosody generation for expressive speech synthesis with prosody conditional adversarial training"
+      authors: "H.-S. Oh, S.-H. Lee, S.-W. Lee"
+      venue: "IEEE/ACM Transactions on Audio, Speech, and Language Processing"
+      tags: 
+        - Text-to-speech
+        - Speech synthesis
+        - Denoising diffusion model
+        - Prosody modeling
+        - Generative adversarial networks
+      links:
+        - label: "Paper"
+          href: "https://ieeexplore.ieee.org/abstract/document/10517426"
+        - label: "Demo"
+          href: "https://prml-lab-speech-team.github.io/demo/DiffProsody/"
+        - label: "Code"
+          href: "https://github.com/hs-oh-prml/DiffProsody"
+
+
+
+- year: 2023
+  items:
+    - title: "HierVST: Hierarchical Adaptive Zero-shot Voice Style Transfer"
+      authors: "S.-H. Lee, H.-Y. Choi, H.-S. Oh, S.-W. Lee"
+      venue: "INTERSPEECH"
+      tags: 
+        - Voice conversion
+        - Voice style transfer
+        - Zero-shot voice conversion
+        - Self-supervised speech representation
+      links:
+        - label: "Paper"
+          href: "https://www.isca-archive.org/interspeech_2023/lee23i_interspeech.html"
+        - label: "Demo"
+          href: "https://hiervst.github.io/"
+
+- year: 2021
+  items:
+    - title: "Haze removal network using unified function for image dehazing"
+      authors: "H.-S. Oh, H.-N. Kim, Y.-J. Kim, C.-H. Yim"
+      venue: "Electronics Letters"
+      tags: 
+        - Dehaze
+        - U-Net 
+      links:
+        - label: "Paper"
+          href: "https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/ell2.12035"

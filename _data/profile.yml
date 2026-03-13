@@ -8,8 +8,8 @@ links:
   - label: "Email"
     href: "mailto:hs_oh@korea.ac.kr"
   - label: "Google Scholar"
-    href: "#"
+    href: "https://scholar.google.com/citations?hl=ko&user=pgJeqLIAAAAJ"
   - label: "PRML"
-    href: "https://pr.korea.ac.kr/"
+    href: "http://pr.korea.ac.kr/"
 
-footer: "Last updated March 2026 · Academic homepage draft"
+footer: "Last updated March 2026"
