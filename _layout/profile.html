@@ -1,0 +1,223 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ site.data.profile.name }} | Academic Page</title>
+  <link rel="stylesheet" href="{{ '/assets/css/profile.css' | relative_url }}">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="brand">{{ site.data.profile.name }}</div>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#patents">Patents</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <section class="hero reveal" id="about">
+      <div class="portrait">
+        {% if site.data.profile.photo_src and site.data.profile.photo_src != "" %}
+          <img src="{{ site.data.profile.photo_src }}" alt="{{ site.data.profile.name }}">
+        {% else %}
+          {{ site.data.profile.photo_text }}
+        {% endif %}
+      </div>
+
+      <div class="hero-copy">
+        <h1>{{ site.data.profile.name }}</h1>
+        <div class="subtitle">{{ site.data.profile.subtitle }}</div>
+        <p>{{ site.data.profile.bio }}</p>
+
+        <div class="links">
+          {% for link in site.data.profile.links %}
+            <a href="{{ link.href }}">{{ link.label }}</a>{% unless forloop.last %}<span>|</span>{% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="news" class="reveal">
+      <h2 class="section-title">News</h2>
+      <div class="news-list">
+        {% for item in site.data.news %}
+        <div class="news-item">
+          <div class="date">{{ item.date }}</div>
+          <div>{{ item.text }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="education" class="reveal">
+      <h2 class="section-title">Education</h2>
+      <div class="exp-list">
+        {% for item in site.data.education %}
+        <div class="exp-item">
+          <div class="meta">{{ item.date }}</div>
+          <div>
+            <strong>{{ item.title }}</strong><br>
+            {{ item.org }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="experience" class="reveal">
+      <h2 class="section-title">Experience</h2>
+      <div class="exp-list">
+        {% for item in site.data.experience %}
+        <div class="exp-item">
+          <div class="meta">{{ item.date }}</div>
+          <div>
+            <strong>{{ item.title }}</strong><br>
+            {{ item.org }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2 class="section-title">Projects</h2>
+      <div class="exp-list">
+        {% for item in site.data.projects %}
+        <div class="exp-item">
+          <div class="meta">{{ item.date }}</div>
+          <div>
+            <strong>{{ item.title }}</strong><br>
+            {{ item.org }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="publications" class="reveal">
+      <h2 class="section-title">Publications</h2>
+      <div class="paper-list">
+        {% for group in site.data.publications %}
+        <div class="paper-group reveal">
+          <div class="paper-group-year" tabindex="0" role="button" aria-expanded="true">
+            <span>{{ group.year }}</span>
+          </div>
+
+          <div class="paper-group-items">
+            {% for paper in group.items %}
+            <div class="paper">
+              <h3>{{ paper.title }}</h3>
+              <div class="authors">{{ paper.authors }}</div>
+              <div class="venue">{{ paper.venue }}</div>
+
+              {% if paper.tags and paper.tags.size > 0 %}
+              <div class="chip-row">
+                {% for tag in paper.tags %}
+                <span class="chip">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+
+              {% if paper.links and paper.links.size > 0 %}
+              <div class="paper-links">
+                {% for link in paper.links %}
+                <a href="{{ link.href }}">{{ link.label }}</a>
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="awards" class="reveal">
+      <h2 class="section-title">Awards</h2>
+      <div class="exp-list">
+        {% for item in site.data.awards %}
+        <div class="exp-item">
+          <div class="meta">{{ item.date }}</div>
+          <div>
+            <strong>{{ item.title }}</strong><br>
+            {{ item.org }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="patents" class="reveal">
+      <h2 class="section-title">Patents</h2>
+      <div class="exp-list">
+        {% for item in site.data.patents %}
+        <div class="exp-item">
+          <div class="meta">{{ item.date }}</div>
+          <div>
+            <strong>{{ item.title }}</strong><br>
+            {{ item.org }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="services" class="reveal">
+      <h2 class="section-title">Services</h2>
+      <div class="exp-list">
+        {% for item in site.data.services %}
+        <div class="exp-item">
+          <div class="meta">{{ item.date }}</div>
+          <div>
+            <strong>{{ item.title }}</strong>{% if item.org != "" %}<br>{{ item.org }}{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-list">
+        {% for item in site.data.contact %}
+        <div class="contact-item">
+          <div class="meta">{{ item.label }}</div>
+          <div>
+            {% if item.href and item.href != "" %}
+              <a href="{{ item.href }}">{{ item.value }}</a>
+            {% else %}
+              {{ item.value }}
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <footer>{{ site.data.profile.footer }}</footer>
+  </div>
+</main>
+
+<button class="top-button" id="topButton" aria-label="Back to top">↑</button>
+
+<script src="{{ '/assets/js/profile.js' | relative_url }}"></script>
+</body>
+</html>

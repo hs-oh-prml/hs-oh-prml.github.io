@@ -11,5 +11,6 @@ links:
     href: "https://scholar.google.com/citations?hl=ko&user=pgJeqLIAAAAJ"
   - label: "PRML"
     href: "http://pr.korea.ac.kr/"
-
+  - label: "Github"
+    href: "https://github.com/hs-oh-prml"
 footer: "Last updated March 2026"
