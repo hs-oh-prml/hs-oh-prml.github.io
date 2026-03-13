@@ -165,8 +165,6 @@
         - label: "Code"
           href: "https://github.com/hs-oh-prml/DiffProsody"
 
-
-
 - year: 2023
   items:
     - title: "HierVST: Hierarchical Adaptive Zero-shot Voice Style Transfer"
