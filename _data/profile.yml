@@ -1,0 +1,15 @@
+name: "Hyung-Seok Oh"
+subtitle: "Integrated M.S.&Ph.D Student · Department of Artificial Intelligence · Korea University, Seoul, South Korea"
+bio: "I am an integrated M.S. & Ph.D. student in the Department of Artificial Intelligence at Korea University. My research centers on speech generation and affective speech modeling, with particular interests in speech synthesis, neural vocoders, voice conversion, generative models, and affective computing."
+photo_text: "Photo"
+photo_src: "/assets/profile.jpg"
+
+links:
+  - label: "Email"
+    href: "mailto:hs_oh@korea.ac.kr"
+  - label: "Google Scholar"
+    href: "#"
+  - label: "PRML"
+    href: "https://pr.korea.ac.kr/"
+
+footer: "Last updated March 2026 · Academic homepage draft"

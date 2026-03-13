@@ -1,0 +1,11 @@
+- label: "Email"
+  value: "hs_oh@korea.ac.kr"
+  href: "mailto:hs_oh@korea.ac.kr"
+
+- label: "Google Scholar"
+  value: "Scholar Profile"
+  href: "#"
+
+- label: "Research Group"
+  value: "PRML (Supervisor: Seong-Whan Lee)"
+  href: "https://pr.korea.ac.kr/"

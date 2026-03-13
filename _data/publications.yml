@@ -1,0 +1,45 @@
+- year: 2026
+  items:
+    - title: "Toward Complex-Valued Neural Networks for Waveform Generation"
+      authors: "H.-S. Oh, D.-H. Cho, S.-B. Kim, S.-W. Lee"
+      venue: "ICLR 2026"
+      tags:
+        - "Waveform Generation"
+        - "Complex-Valued NN"
+      links:
+        - label: "Paper"
+          href: "#"
+        - label: "Code"
+          href: "#"
+        - label: "BibTeX"
+          href: "#"
+
+- year: 2025
+  items:
+    - title: "FillerSpeech: Towards Human-Like Text-to-Speech Synthesis with Filler Injection and Filler Style Control"
+      authors: "S.-B. Kim, J.-H. Cha, H.-S. Oh, H.-J. Choi, S.-W. Lee"
+      venue: "EMNLP 2025"
+      tags: []
+      links:
+        - label: "Paper"
+          href: "#"
+        - label: "Code"
+          href: "#"
+
+    - title: "EmoSphere-SER: Enhancing Speech Emotion Recognition through Spherical Representation with Auxiliary Classification"
+      authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-W. Lee"
+      venue: "INTERSPEECH 2025"
+      tags: []
+      links:
+        - label: "Paper"
+          href: "#"
+
+- year: 2024
+  items:
+    - title: "EmoSphere-TTS: Emotional Style and Intensity Modeling via Spherical Emotion Vector for Controllable Emotional Text-to-Speech"
+      authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-H. Lee, S.-W. Lee"
+      venue: "INTERSPEECH 2024"
+      tags: []
+      links:
+        - label: "Paper"
+          href: "#"
