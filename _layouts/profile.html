@@ -48,7 +48,7 @@ layout: null
 
         <div class="links">
           {% for link in site.data.profile.links %}
-            <a href="{{ link.href }}">{{ link.label }}</a>{% unless forloop.last %}<span>|</span>{% endunless %}
+            <a href="{{ link.href }}" class="link-btn link-{{ link.label | downcase }}">{{ link.label }}</a>{% unless forloop.last %}<span>|</span>{% endunless %}
           {% endfor %}
         </div>
       </div>
