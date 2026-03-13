@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
-      if (rect.top <= 120 && rect.bottom >= 120) {
+      if (rect.top <= 140 && rect.bottom >= 140) {
         currentId = section.id;
       }
     });
@@ -33,10 +33,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.12 }
+    {
+      threshold: 0.12
+    }
   );
 
-  revealEls.forEach((el) => revealObserver.observe(el));
+  revealEls.forEach((el) => {
+    if (!el.classList.contains("visible")) {
+      revealObserver.observe(el);
+    }
+  });
 
   paperGroups.forEach((group) => {
     const header = group.querySelector(".paper-group-year");

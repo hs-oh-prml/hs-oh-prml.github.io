@@ -1,29 +1,22 @@
----
-layout: null
----
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ site.data.profile.name }} | Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.data.profile.name }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/profile.css' | relative_url }}">
 </head>
 <body>
 
 <nav class="nav">
   <div class="container nav-inner">
-    <div class="brand">{{ site.data.profile.name }}</div>
-    <div class="menu">
+    <a class="brand" href="#about">{{ site.data.profile.name }}</a>
+
+    <div class="menu" aria-label="Primary">
       <a href="#about">About</a>
-      <a href="#news">News</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
       <a href="#awards">Awards</a>
-      <a href="#patents">Patents</a>
-      <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -32,7 +25,7 @@ layout: null
 <main>
   <div class="container">
 
-    <section class="hero reveal" id="about">
+    <section class="hero reveal visible" id="about">
       <div class="portrait">
         {% if site.data.profile.photo_src and site.data.profile.photo_src != "" %}
           <img src="{{ site.data.profile.photo_src }}" alt="{{ site.data.profile.name }}">
@@ -48,7 +41,7 @@ layout: null
 
         <div class="links">
           {% for link in site.data.profile.links %}
-            <a href="{{ link.href }}" class="link-btn link-{{ link.label | downcase }}">{{ link.label }}</a>{% unless forloop.last %}<span>|</span>{% endunless %}
+            <a href="{{ link.href }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
           {% endfor %}
         </div>
       </div>
@@ -115,7 +108,7 @@ layout: null
       <h2 class="section-title">Publications</h2>
       <div class="paper-list">
         {% for group in site.data.publications %}
-        <div class="paper-group reveal">
+        <div class="paper-group">
           <div class="paper-group-year" tabindex="0" role="button" aria-expanded="true">
             <span>{{ group.year }}</span>
           </div>
@@ -138,7 +131,14 @@ layout: null
               {% if paper.links and paper.links.size > 0 %}
               <div class="paper-links">
                 {% for link in paper.links %}
-                <a href="{{ link.href }}">{{ link.label }}</a>
+                <a
+                  href="{{ link.href }}"
+                  class="link-btn link-{{ link.label | downcase | replace: ' ', '-' }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ link.label }}
+                </a>
                 {% endfor %}
               </div>
               {% endif %}
