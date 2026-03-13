@@ -89,21 +89,6 @@
       </div>
     </section>
 
-    <section id="projects" class="reveal">
-      <h2 class="section-title">Projects</h2>
-      <div class="exp-list">
-        {% for item in site.data.projects %}
-        <div class="exp-item">
-          <div class="meta">{{ item.date }}</div>
-          <div>
-            <strong>{{ item.title }}</strong><br>
-            {{ item.org }}
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-
     <section id="publications" class="reveal">
       <h2 class="section-title">Publications</h2>
       <div class="paper-list">
@@ -150,6 +135,21 @@
       </div>
     </section>
 
+    <section id="projects" class="reveal">
+      <h2 class="section-title">Projects</h2>
+      <div class="exp-list">
+        {% for item in site.data.projects %}
+        <div class="exp-item">
+          <div class="meta">{{ item.date }}</div>
+          <div>
+            <strong>{{ item.title }}</strong><br>
+            {{ item.org }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+        
     <section id="awards" class="reveal">
       <h2 class="section-title">Awards</h2>
       <div class="exp-list">
