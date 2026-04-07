@@ -1,5 +1,20 @@
 - year: 2026
   items:
+    - title: "Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations"
+      authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-W. Lee"
+      venue: "ACL findings"
+      tags:
+        - "Zero-Shot Text-to-Speech"
+        - "Emotional Speech Synthesis"
+        - "Nonverbal Vocalization Synthesis"
+      links:
+        - label: "Paper"
+          href: "https://arxiv.org/abs/2603.14432"
+        - label: "Demo"
+          href: "https://choddeok.github.io/Affectron/"
+        - label: "Code"
+          href: "https://github.com/Choddeok/Affectron"
+
     - title: "Toward Complex-Valued Neural Networks for Waveform Generation"
       authors: "H.-S. Oh, D.-H. Cho, S.-B. Kim, S.-W. Lee"
       venue: "ICLR"

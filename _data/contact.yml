@@ -6,6 +6,14 @@
   value: "Scholar Profile"
   href: "https://scholar.google.com/citations?hl=ko&user=pgJeqLIAAAAJ"
 
-- label: "Research Group"
+- label: "GitHub"
+  value: "GitHub Profile"
+  href: "https://github.com/hs-oh-prml"
+
+- label: "LinkedIn"
+  value: "LinkedIn Profile"
+  href: "https://www.linkedin.com/in/hs-oh"
+
+- label: "Lab"
   value: "PRML (Supervisor: Seong-Whan Lee)"
   href: "http://pr.korea.ac.kr/"

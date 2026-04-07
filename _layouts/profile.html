@@ -3,327 +3,294 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>{{ site.data.profile.name | default: site.title }}</title>
   {% if site.data.profile.bio %}
     <meta name="description" content="{{ site.data.profile.bio | escape }}">
   {% endif %}
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="{{ '/assets/css/profile.css' | relative_url }}">
 </head>
 <body>
-  {% assign publication_count = 0 %}
-  {% for group in site.data.publications %}
-    {% assign publication_count = publication_count | plus: group.items.size %}
-  {% endfor %}
+  <div class="page-shell">
+    <header class="header">
+      <div class="container">
+        <div class="hero-card reveal" id="overview">
+          <div class="hero-left">
+            {% if site.data.profile.photo_src %}
+              <div class="photo-frame">
+                <img src="{{ site.data.profile.photo_src | relative_url }}" alt="{{ site.data.profile.name }}" class="profile-photo">
+              </div>
+            {% endif %}
+            <div class="contact-links">
+              {% for item in site.data.contact %}
+                {% if item.href %}
+                  <a href="{{ item.href }}" target="_blank" rel="noreferrer" class="contact-chip" title="{{ item.label }}">
+                    {% if item.label == "Email" %}<i class="fas fa-envelope"></i>{% endif %}
+                    {% if item.label == "Google Scholar" %}<i class="fas fa-graduation-cap"></i>{% endif %}
+                    {% if item.label == "GitHub" %}<i class="fab fa-github"></i>{% endif %}
+                    {% if item.label == "LinkedIn" %}<i class="fab fa-linkedin"></i>{% endif %}
+                    {% if item.label == "Lab" %}<i class="fas fa-laptop-code"></i>{% endif %}
+                    <span class="sr-only">{{ item.label }}</span>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
 
-  <nav class="topbar">
-    <div class="container">
-      <div class="topbar-shell">
-        <div class="menu" aria-label="Primary">
-          <a href="#overview">Overview</a>
+          <div class="hero-right">
+            <h1>{{ site.data.profile.name }}</h1>
+            {% if site.data.profile.subtitle %}
+              <p class="hero-subtitle">{{ site.data.profile.subtitle }}</p>
+            {% endif %}
+            {% if site.data.profile.bio %}
+              <p class="hero-summary">{{ site.data.profile.bio }}</p>
+            {% endif %}
+
+            <ul class="areas hero-areas">
+              <li>Speech synthesis</li>
+              <li>Affective speech</li>
+              <li>Voice conversion</li>
+              <li>Generative models</li>
+              <li>Expressive TTS</li>
+            </ul>
+          </div>
+        </div>
+
+        <nav class="section-nav reveal" aria-label="Section navigation">
+          <a href="#career">Education & Experience</a>
           <a href="#news">News</a>
           <a href="#publications">Publications</a>
-          <a href="#career">Career</a>
-          <a href="#contact">Contact</a>
-        </div>
+          <a href="#projects">Projects</a>
+          <a href="#awards">Awards</a>
+          <a href="#patents">Patents</a>
+          <a href="#services">Services</a>
+        </nav>
       </div>
-    </div>
-  </nav>
+    </header>
 
-  <main id="top">
-    <div class="container">
-      <div class="page-grid">
-        <aside class="sidebar-card reveal visible">
-          <div class="portrait-wrap">
-            <div class="portrait">
-              {% if site.data.profile.photo_src and site.data.profile.photo_src != "" %}
-                <img src="{{ site.data.profile.photo_src | relative_url }}" alt="{{ site.data.profile.name }}">
-              {% else %}
-                <span>{{ site.data.profile.photo_text }}</span>
-              {% endif %}
-            </div>
+    <main class="main">
+      <div class="container content-stack">
+        <section id="career" class="section reveal">
+          <div class="section-heading">
+            <h2>Education & Experience</h2>
           </div>
-
-          <div class="sidebar-copy">
-            <span class="eyebrow">Academic Profile</span>
-            <h1>{{ site.data.profile.name }}</h1>
-
-            {% if site.data.profile.subtitle %}
-              <p class="subtitle">{{ site.data.profile.subtitle }}</p>
-            {% endif %}
-
-            {% if site.data.profile.bio %}
-              <p class="bio">{{ site.data.profile.bio }}</p>
-            {% endif %}
-          </div>
-
-          <div class="mini-facts">
-            <div>
-              <span class="fact-label">Papers</span>
-              <strong>{{ publication_count }}</strong>
-            </div>
-            <div>
-              <span class="fact-label">Projects</span>
-              <strong>{{ site.data.projects | size }}</strong>
-            </div>
-            <div>
-              <span class="fact-label">Awards</span>
-              <strong>{{ site.data.awards | size }}</strong>
-            </div>
-          </div>
-
-          {% if site.data.profile.links and site.data.profile.links.size > 0 %}
-            <div class="action-list">
-              {% for link in site.data.profile.links %}
-                <a href="{{ link.href }}" target="_blank" rel="noopener noreferrer">
-                  {{ link.label }}
-                </a>
-              {% endfor %}
-            </div>
-          {% endif %}
-        </aside>
-
-        <div class="content-column">
-          <section class="overview-card reveal visible" id="overview">
-            <div class="overview-topbar">
-              <div class="overview-heading">
-                <span class="eyebrow">Research Focus</span>
-                <h2 class="overview-title">Speech Generation and Affective Speech Modeling</h2>
-              </div>
-            </div>
-
-            <div class="overview-grid">
-              <div class="overview-block overview-summary">
-                <h3>Overview</h3>
-                {% if site.data.profile.bio %}
-                  <p>{{ site.data.profile.bio }}</p>
+          <div class="career-logos">
+            {% for item in site.data.education %}
+              <div class="career-logo-item">
+                {% if item.org contains "Korea University" %}
+                  <div class="logo-badge logo-badge-ku">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/Korea_University_Global_Symbol.svg/250px-Korea_University_Global_Symbol.svg.png" alt="Korea University" class="org-logo-large org-logo-ku">
+                  </div>
+                {% elsif item.org contains "Konkuk University" %}
+                  <div class="logo-badge logo-badge-circle">
+                    <img src="https://en.konkuk.ac.kr/sites/en/images/sub/signature-logo_large.jpg" alt="Konkuk University" class="org-logo-large">
+                  </div>
                 {% endif %}
-              </div>
-
-              <div class="overview-block overview-areas">
-                <h3>Primary Areas</h3>
-                <div class="area-chip-list">
-                  <span class="area-chip">Speech synthesis</span>
-                  <span class="area-chip">Affective speech modeling</span>
-                  <span class="area-chip">Voice conversion</span>
-                  <span class="area-chip">Generative models</span>
-                  <span class="area-chip">Affective computing</span>
+                <div class="career-copy">
+                  <p>{{ item.title }}</p>
+                  {% if item.org %}<p class="career-org">{{ item.org }}</p>{% endif %}
+                  <div class="logo-date">{{ item.date }}</div>
                 </div>
               </div>
-            </div>
-          </section>
-
-          <section id="news" class="reveal">
-            <div class="section-heading">
-              <h2>News</h2>
-            </div>
-
-            <div class="panel-block">
-              <div class="timeline compact">
-                {% for item in site.data.news %}
-                  <div class="timeline-item">
-                    <div class="timeline-date">{{ item.date }}</div>
-                    <div class="timeline-body">
-                      <strong>{{ item.text }}</strong>
-                    </div>
+            {% endfor %}
+            {% for item in site.data.experience %}
+              <div class="career-logo-item">
+                {% if item.org contains "NAVER" %}
+                  <div class="logo-badge logo-badge-circle">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Naver_Logotype.svg" alt="NAVER" class="org-logo-large">
                   </div>
-                {% endfor %}
-              </div>
-            </div>
-          </section>
-
-          <section id="publications" class="reveal">
-            <div class="section-heading">
-              <h2>Publications</h2>
-            </div>
-
-            <div class="publication-groups">
-              {% for group in site.data.publications %}
-                <div class="publication-group {% unless forloop.first %}collapsed{% endunless %}">
-                  <button class="publication-year" type="button" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
-                    <span>{{ group.year }}</span>
-                    <small>{{ group.items.size }} items</small>
-                  </button>
-
-                  <div class="publication-items">
-                    {% for paper in group.items %}
-                      <article class="paper-card">
-                        <h3>{{ paper.title }}</h3>
-
-                        {% if paper.authors %}
-                          <div class="authors">{{ paper.authors }}</div>
-                        {% endif %}
-
-                        {% if paper.venue %}
-                          <div class="venue">{{ paper.venue }}</div>
-                        {% endif %}
-
-                        {% if paper.tags and paper.tags.size > 0 %}
-                          <div class="chip-row">
-                            {% for tag in paper.tags %}
-                              <span class="chip">{{ tag }}</span>
-                            {% endfor %}
-                          </div>
-                        {% endif %}
-
-                        {% if paper.links and paper.links.size > 0 %}
-                          <div class="link-row">
-                            {% for link in paper.links %}
-                              <a
-                                href="{{ link.href }}"
-                                class="link-btn link-{{ link.label | downcase | replace: ' ', '-' }}"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                {{ link.label }}
-                              </a>
-                            {% endfor %}
-                          </div>
-                        {% endif %}
-                      </article>
-                    {% endfor %}
-                  </div>
+                {% endif %}
+                <div class="career-copy">
+                  <p>{{ item.title }}</p>
+                  {% if item.org %}<p class="career-org">{{ item.org }}</p>{% endif %}
+                  <div class="logo-date">{{ item.date }}</div>
                 </div>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        <section id="news" class="section reveal">
+          <div class="section-heading">
+            <h2>News</h2>
+          </div>
+          <div class="news-panel">
+            <ul class="news-list compact-rows">
+              {% for item in site.data.news %}
+                <li>
+                  <span class="item-date">{{ item.date }}</span>
+                  <p>{{ item.text }}</p>
+                </li>
               {% endfor %}
-            </div>
-          </section>
+            </ul>
+          </div>
+        </section>
 
-          <section id="career" class="reveal">
-            <div class="split-section">
-              <div class="panel-block">
-                <h3>Education</h3>
-                <div class="timeline">
-                  {% for item in site.data.education %}
-                    <div class="timeline-item">
-                      <div class="timeline-date">{{ item.date }}</div>
-                      <div class="timeline-body">
-                        <strong>{{ item.title }}</strong>
-                        {% if item.org and item.org != "" %}
-                          <p>{{ item.org }}</p>
+        <section id="publications" class="section reveal">
+          <div class="section-heading">
+            <h2>Publications</h2>
+          </div>
+          <div class="publication-groups">
+            {% for group in site.data.publications %}
+              <div class="publication-group">
+                <div class="publication-year-rail">
+                  <h3 class="publication-year-heading">{{ group.year }}</h3>
+                </div>
+                <ul class="publication-list publication-card-list">
+                  {% for paper in group.items %}
+                    <li class="publication-card">
+                      <div class="publication-main">
+                        {% assign paper_link = "" %}
+                        {% if paper.links %}
+                          {% for link in paper.links %}
+                            {% assign label_downcase = link.label | downcase %}
+                            {% if label_downcase == "paper" %}
+                              {% assign paper_link = link.href %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                        <h4>
+                          {% if paper_link != "" %}
+                            <a href="{{ paper_link }}" target="_blank" rel="noreferrer" class="publication-title-link">{{ paper.title }}</a>
+                          {% else %}
+                            {{ paper.title }}
+                          {% endif %}
+                        </h4>
+                        <div class="publication-meta">
+                          {% if paper.authors %}
+                            <p class="publication-authors">{{ paper.authors }}</p>
+                          {% endif %}
+                          {% if paper.venue %}
+                            <p class="publication-venue">{{ paper.venue }}</p>
+                          {% endif %}
+                        </div>
+                        {% if paper.tags %}
+                          <ul class="publication-tags">
+                            {% for tag in paper.tags %}
+                              <li>{{ tag }}</li>
+                            {% endfor %}
+                          </ul>
                         {% endif %}
                       </div>
-                    </div>
+                    </li>
                   {% endfor %}
-                </div>
+                </ul>
               </div>
+            {% endfor %}
+          </div>
+        </section>
 
-              <div class="panel-block">
-                <h3>Experience</h3>
-                <div class="timeline">
-                  {% for item in site.data.experience %}
-                    <div class="timeline-item">
-                      <div class="timeline-date">{{ item.date }}</div>
-                      <div class="timeline-body">
-                        <strong>{{ item.title }}</strong>
-                        {% if item.org and item.org != "" %}
-                          <p>{{ item.org }}</p>
-                        {% endif %}
-                      </div>
+        <section id="projects" class="section reveal">
+          <div class="section-heading">
+            <h2>Projects</h2>
+          </div>
+          <ul class="project-list">
+            {% for item in site.data.projects %}
+              <li>
+                <div class="project-logo-wrap">
+                  {% if item.org contains "Murf" %}
+                    <div class="logo-badge">
+                      <img src="https://cdn.prod.website-files.com/66b3765153a8a0c399c70981/67b84d9e95603b4c6889c584__img_%20murf-logo.svg" alt="Murf AI" class="project-logo murf-logo">
                     </div>
-                  {% endfor %}
-                </div>
-              </div>
-
-              <div class="panel-block full-span" id="projects">
-                <h3>Projects</h3>
-                <div class="timeline compact">
-                  {% for item in site.data.projects %}
-                    <div class="timeline-item">
-                      <div class="timeline-date">{{ item.date }}</div>
-                      <div class="timeline-body">
-                        <strong>{{ item.title }}</strong>
-                        {% if item.org and item.org != "" %}
-                          <p>{{ item.org }}</p>
-                        {% endif %}
-                      </div>
+                  {% elsif item.org contains "Samsung" %}
+                    <div class="logo-badge">
+                      <img src="https://cdn.codeground.org/nsr/images/layout/logo-sr.png" alt="Samsung Research" class="project-logo project-logo-samsung-research">
                     </div>
-                  {% endfor %}
-                </div>
-              </div>
-
-              <div class="panel-block" id="awards">
-                <h3>Awards</h3>
-                <div class="timeline compact-tight">
-                  {% for item in site.data.awards %}
-                    <div class="timeline-item subtle">
-                      <div class="timeline-date">{{ item.date }}</div>
-                      <div class="timeline-body">
-                        <strong>{{ item.title }}</strong>
-                        {% if item.org and item.org != "" %}
-                          <p>{{ item.org }}</p>
-                        {% endif %}
-                      </div>
+                  {% elsif item.org contains "NAVER" %}
+                    <div class="logo-badge">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Naver_Logotype.svg" alt="NAVER" class="project-logo">
                     </div>
-                  {% endfor %}
-                </div>
-              </div>
-
-              <div class="panel-block" id="services">
-                <h3>Services</h3>
-                <div class="timeline compact-tight">
-                  {% for item in site.data.services %}
-                    <div class="timeline-item subtle">
-                      <div class="timeline-date">{{ item.date }}</div>
-                      <div class="timeline-body">
-                        <strong>{{ item.title }}</strong>
-                        {% if item.org and item.org != "" %}
-                          <p>{{ item.org }}</p>
-                        {% endif %}
-                      </div>
+                  {% elsif item.org contains "Netmarble" %}
+                    <div class="logo-badge">
+                      <img src="https://company.netmarble.com/resources/img/en/company/ci3.jpg" alt="Netmarble" class="project-logo">
                     </div>
-                  {% endfor %}
-                </div>
-              </div>
-
-              <div class="panel-block full-span" id="patents">
-                <h3>Patents</h3>
-                <div class="timeline compact">
-                  {% for item in site.data.patents %}
-                    <div class="timeline-item">
-                      <div class="timeline-date">{{ item.date }}</div>
-                      <div class="timeline-body">
-                        <strong>{{ item.title }}</strong>
-                        {% if item.org and item.org != "" %}
-                          <p>{{ item.org }}</p>
-                        {% endif %}
-                      </div>
-                    </div>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="contact" class="reveal">
-            <div class="section-heading">
-              <h2>Contact</h2>
-            </div>
-
-            <div class="contact-grid">
-              {% for item in site.data.contact %}
-                <div class="contact-card">
-                  <span>{{ item.label }}</span>
-                  {% if item.href and item.href != "" %}
-                    <a href="{{ item.href }}" target="_blank" rel="noopener noreferrer">{{ item.value }}</a>
-                  {% else %}
-                    <strong>{{ item.value }}</strong>
                   {% endif %}
                 </div>
-              {% endfor %}
-            </div>
-          </section>
+                <div class="project-copy">
+                  <span class="item-date">{{ item.date }}</span>
+                  <p><strong>{{ item.title }}</strong></p>
+                  {% if item.org %}
+                    <p class="muted">{{ item.org }}</p>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
 
-          <footer class="footer">
-            {{ site.data.profile.footer }}
-          </footer>
-        </div>
+        <section id="awards" class="section reveal">
+          <div class="section-heading">
+            <h2>Awards</h2>
+          </div>
+          <ul class="detail-list">
+            {% for item in site.data.awards %}
+              <li>
+                <span class="item-date">{{ item.date }}</span>
+                <div class="detail-copy">
+                  <p><strong>{{ item.title }}</strong></p>
+                  {% if item.org %}<p class="muted">{{ item.org }}</p>{% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section id="patents" class="section reveal">
+          <div class="section-heading">
+            <h2>Patents</h2>
+          </div>
+          <ul class="detail-list">
+            {% for item in site.data.patents %}
+              <li>
+                <span class="item-date">{{ item.date }}</span>
+                <div class="detail-copy">
+                  <p><strong>{{ item.title }}</strong></p>
+                  {% if item.org %}<p class="muted">{{ item.org }}</p>{% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section id="services" class="section reveal">
+          <div class="section-heading">
+            <h2>Services</h2>
+          </div>
+          <ul class="detail-list">
+            {% for item in site.data.services %}
+              <li>
+                <span class="item-date">{{ item.date }}</span>
+                <div class="detail-copy">
+                  <p><strong>{{ item.title }}</strong></p>
+                  {% if item.org %}<p class="muted">{{ item.org }}</p>{% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <button class="top-button" id="topButton" aria-label="Back to top">↑</button>
+    <footer class="footer">
+      <div class="container">
+        <div class="visitor-widget">
+          <p class="visitor-widget-label">Visitors</p>
+          <div class="visitor-widget-embed">
+            <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=mpFtUyPMyNtUJfsFZu81uZ9PPRWZFCuFK4bY24k5q7c'></script>
+          </div>
+        </div>
+        <p>{{ site.data.profile.footer }}</p>
+      </div>
+    </footer>
 
-  <<script src="/assets/js/profile.js?v=3"></script>
+    <button class="top-button" type="button" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <script src="{{ '/assets/js/profile.js' | relative_url }}"></script>
 </body>
 </html>
