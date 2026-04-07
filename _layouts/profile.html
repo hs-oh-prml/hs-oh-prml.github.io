@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="{{ '/assets/css/profile.css' | relative_url }}">
+  <link rel="stylesheet" href="assets/css/profile.css">
 </head>
 <body>
   <div class="page-shell">
@@ -21,7 +21,7 @@
           <div class="hero-left">
             {% if site.data.profile.photo_src %}
               <div class="photo-frame">
-                <img src="{{ site.data.profile.photo_src | relative_url }}" alt="{{ site.data.profile.name }}" class="profile-photo">
+                <img src="{{ site.data.profile.photo_src }}" alt="{{ site.data.profile.name }}" class="profile-photo">
               </div>
             {% endif %}
             <div class="contact-links">
@@ -291,6 +291,6 @@
     </button>
   </div>
 
-  <script src="{{ '/assets/js/profile.js' | relative_url }}"></script>
+  <script src="assets/js/profile.js"></script>
 </body>
 </html>
