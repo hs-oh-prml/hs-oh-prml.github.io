@@ -1,5 +1,20 @@
 - year: 2026
   items:
+    - title: "L-Proto: Language-Aware Episodic Prototypical Training for Multilingual Speaker Verification"
+      authors: "H.-S. Oh, D.-H. Cho, S.-B. Kim, S.-W. Lee"
+      venue: "INTERSPEECH"
+      tags:
+        - "Speaker Verification"
+        - "Multilingual Speech"
+        - "Episodic Training"
+      links:
+        - label: "Paper"
+          href: ""
+        - label: "Demo"
+          href: ""
+        - label: "Code"
+          href: ""
+
     - title: "Affectron: Emotional Speech Synthesis with Affective and Contextually Aligned Nonverbal Vocalizations"
       authors: "D.-H. Cho, H.-S. Oh, S.-B. Kim, S.-W. Lee"
       venue: "ACL findings"
